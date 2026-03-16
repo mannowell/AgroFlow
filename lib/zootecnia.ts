@@ -5,6 +5,8 @@ export interface ZootecnicMetrics {
   mortality: number; // %
   daysPassed: number;
   estimatedAbateDate: Date;
+  projectedRevenue: number;
+  projectedProfit: number;
 }
 
 export function calculateMetrics(
@@ -46,7 +48,9 @@ export function calculateMetrics(
     gpd,
     mortality,
     daysPassed,
-    estimatedAbateDate
+    estimatedAbateDate,
+    projectedRevenue: currentQuantity * targetWeight * 18, // Simulação: R$ 18/kg
+    projectedProfit: (currentQuantity * targetWeight * 18) - (totalFeed * 1.8) // Simulação: R$ 1.80/kg ração
   };
 }
 

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { CheckCircle2, Rocket, Shield, Zap, ArrowRight, Github } from "lucide-react";
+import { CheckCircle2, Rocket, Shield, Zap, ArrowRight, Github, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
 const fadeInUp = {
@@ -28,9 +28,9 @@ export default function Home() {
       <header className="px-4 lg:px-6 h-16 flex items-center border-b backdrop-blur-md bg-background/80 sticky top-0 z-50">
         <Link className="flex items-center justify-center gap-2 hover:opacity-80 transition-opacity" href="#">
           <div className="bg-primary p-1.5 rounded-lg">
-            <CheckCircle2 className="h-5 w-5 text-primary-foreground" />
+            <TrendingUp className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="font-bold text-xl tracking-tight">FocusFlow</span>
+          <span className="font-bold text-xl tracking-tight">AgroFlow</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link className="text-sm font-medium hover:text-primary transition-colors mt-2" href="#features">
@@ -68,11 +68,11 @@ export default function Home() {
             
             <motion.div className="space-y-4" variants={fadeInUp}>
               <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50">
-                Domine o seu dia com <br className="hidden md:block" />
-                <span className="text-primary italic">Simplicidade</span> e Foco.
+                Performance Zootécnica com <br className="hidden md:block" />
+                <span className="text-primary italic">Precisão</span> e Lucratividade.
               </h1>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-2xl/relaxed">
-                O gerenciador de tarefas desenhado para pessoas que buscam performance e clareza mental, não apenas listas de afazeres.
+                A plataforma de gestão para pecuaristas que buscam excelência operacional, não apenas planilhas.
               </p>
             </motion.div>
 
@@ -104,9 +104,9 @@ export default function Home() {
         <section id="features" className="w-full py-24 bg-muted/30 relative">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Por que escolher o FocusFlow?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Por que escolher o AgroFlow?</h2>
               <p className="max-w-[800px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
-                Ferramentas poderosas para aumentar sua produtividade sem a complexidade desnecessária.
+                Ferramentas de precisão para maximizar o ganho de peso e a eficiência alimentar do seu rebanho.
               </p>
             </div>
             
@@ -175,11 +175,11 @@ export default function Home() {
 
       <footer className="w-full py-12 px-4 md:px-6 border-t flex flex-col md:flex-row items-center justify-between gap-6 bg-background">
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg">FocusFlow</span>
+          <TrendingUp className="h-6 w-6 text-primary" />
+          <span className="font-bold text-lg">AgroFlow</span>
         </div>
         <p className="text-sm text-muted-foreground">
-          © 2024 FocusFlow. Todos os direitos reservados.
+          © 2024 AgroFlow. Todos os direitos reservados.
         </p>
         <div className="flex gap-4">
           <Button variant="ghost" size="icon">

@@ -42,7 +42,7 @@ export default async function Page() {
                     <div className="bg-primary p-1.5 rounded-lg shadow-lg shadow-primary/20">
                         <TrendingUp className="h-5 w-5 text-primary-foreground" />
                     </div>
-                    <span className="font-bold text-xl tracking-tight hidden sm:block">AgroPrecision</span>
+                    <span className="font-bold text-xl tracking-tight hidden sm:block">AgroFlow</span>
                 </div>
                 
                 <nav className="ml-8 hidden md:flex items-center gap-6">

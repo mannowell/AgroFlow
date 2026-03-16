@@ -13,6 +13,7 @@ import {
 import { calculateMetrics, getIdealWeightForDay, ZootecnicMetrics } from "@/lib/zootecnia";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { OperationalTasks } from "./operational-tasks";
 
 interface AgtechDashboardProps {
     batch: any; // Using any for MVP speed, should be typed in production
@@ -86,22 +87,24 @@ export function AgtechDashboard({ batch }: AgtechDashboardProps) {
                 <Card className="border-none shadow-md">
                     <CardContent className="p-6">
                         <div className="flex justify-between items-start mb-2">
-                            <TrendingUp className="h-5 w-5 text-emerald-500" />
-                            <ArrowUpRight className="h-4 w-4 text-emerald-500" />
+                            <Users className="h-5 w-5 text-purple-500" />
+                            <Badge variant="secondary" className="text-[10px] bg-purple-100 text-purple-700">{metrics.mortality.toFixed(2)}% Mort.</Badge>
                         </div>
                         <div className="text-2xl font-bold">{(metrics.gpd * 1000).toFixed(0)}g</div>
                         <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wider">Ganho de Peso Diário (GPD)</p>
                     </CardContent>
                 </Card>
 
-                <Card className="border-none shadow-md">
+                <Card className="border-none shadow-md bg-gradient-to-br from-emerald-500/10 to-emerald-600/5 border-l-4 border-emerald-500">
                     <CardContent className="p-6">
                         <div className="flex justify-between items-start mb-2">
-                            <Users className="h-5 w-5 text-purple-500" />
-                            <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                            <TrendingUp className="h-5 w-5 text-emerald-600" />
+                            <Badge variant="outline" className="text-[10px] border-emerald-200 text-emerald-700 bg-emerald-50">Projeção</Badge>
                         </div>
-                        <div className="text-2xl font-bold">{metrics.mortality.toFixed(2)}%</div>
-                        <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wider">Taxa de Mortalidade</p>
+                        <div className="text-2xl font-bold text-emerald-700">
+                            {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(metrics.projectedProfit)}
+                        </div>
+                        <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wider">Lucro Estimado / Lote</p>
                     </CardContent>
                 </Card>
             </div>
@@ -174,6 +177,10 @@ export function AgtechDashboard({ batch }: AgtechDashboardProps) {
                         </div>
                     </CardContent>
                 </Card>
+
+                <div className="lg:col-span-3">
+                    <OperationalTasks />
+                </div>
             </div>
         </div>
     );
