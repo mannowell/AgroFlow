@@ -14,10 +14,17 @@ export default async function Page() {
     const session = { user: { id: "mock-id", email: "produtor@agrotech.com" } };
 
     // Para o MVP: Busca o primeiro lote do usuário ou cria um dummy se não houver
-    let batch = await prisma.batch.findFirst({
-        where: { userId: session.user.id },
-        include: { logs: { orderBy: { weekNumber: 'asc' } } }
-    });
+    let batch;
+    try {
+        batch = await prisma.batch.findFirst({
+            where: { userId: session.user.id },
+            include: { logs: { orderBy: { weekNumber: 'asc' } } }
+        });
+    } catch (e: any) {
+        console.error("Prisma Error:", e);
+        // Em caso de erro no banco (como falta de permissão na Vercel), usamos o dummy
+        batch = null;
+    }
 
     if (!batch) {
         batch = {
