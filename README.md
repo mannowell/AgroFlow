@@ -1,6 +1,6 @@
 # 🚜 AgroFlow
 
-**AgroFlow** é uma plataforma de Gestão de Pecuária, desenhada para pecuaristas que buscam maximizar o desempenho produtivo e financeiro de seus lotes através de dados reais e execução operacional impecável.
+**AgroFlow** é uma plataforma de Gestão de Pecuária, desenhada para pecuaristas que buscam maximizar o desempenho produtivo e financeiro de seus lotes através de dados reais e execução operacional.
 
 ![Versão 2.0](https://img.shields.io/badge/AgroFlow-v2.0-emerald)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
