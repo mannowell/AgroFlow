@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import { auth } from "@/services/auth";
+// import { auth } from "@/services/auth";
 import { prisma } from "@/services/database";
 import { redirect } from "next/navigation";
 import { AgtechDashboard } from "@/components/agtech/dashboard";
